@@ -1,0 +1,6 @@
+name: csi-driver-nfs
+title: csi-driver-nfs
+version: master
+start_page: ROOT:index.adoc
+nav:
+  - modules/ROOT/partials/nav.adoc

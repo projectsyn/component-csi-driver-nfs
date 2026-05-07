@@ -1,0 +1,5 @@
+parameters:
+  csi_driver_nfs:
+    =_metadata:
+      multi_tenant: true
+    namespace: syn-csi-driver-nfs
