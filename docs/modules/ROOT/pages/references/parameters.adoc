@@ -10,6 +10,21 @@ default:: `syn-csi-driver-nfs`
 
 The namespace in which to deploy this component.
 
+== `charts`
+
+[horizontal]
+type:: object
+default:: https://github.com/projectsyn/component-csi-driver-nfs/blob/master/class/defaults.yml[See `class/defaults.yml`]
+
+The Helm chart for the NFS CSI driver.
+
+== `helmValues`
+
+[horizontal]
+type:: object
+default:: https://github.com/projectsyn/component-csi-driver-nfs/blob/master/class/defaults.yml[See `class/defaults.yml]
+
+The Helm values that are used to render the Helm chart.
 
 == Example
 

@@ -7,4 +7,14 @@ local params = inv.parameters.csi_driver_nfs;
 
 // Define outputs below
 {
+  '00_namespace': kube.Namespace(params.namespace) {
+    metadata+: {
+      annotations: {
+        'openshift.io/node-selector': '',
+      },
+      labels: {
+        'openshift.io/cluster-monitoring': 'true',
+      },
+    },
+  },
 }

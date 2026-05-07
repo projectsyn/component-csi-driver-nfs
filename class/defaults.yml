@@ -3,3 +3,10 @@ parameters:
     =_metadata:
       multi_tenant: true
     namespace: syn-csi-driver-nfs
+
+    charts:
+      csi-driver-nfs:
+        source: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+        version: 4.13.2
+
+    helmValues: {}
