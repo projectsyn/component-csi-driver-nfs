@@ -28,6 +28,31 @@ The container image used by the NFS CSI driver.
 
 TIP: Helm value `image.baseRepo` allows overriding the container image registry for all images that aren't defined in this parameter.
 
+== `storageClassDefaults`
+
+[horizontal]
+type:: object
+default:: `{}`
+
+Storage class configurations which are used as the base configuration for each storage class defined in parameter `storageClasses`.
+
+== `storageClasses`
+
+[horizontal]
+type:: object
+default:: `{}`
+
+Each key-value pair defined in this parameter is used to render a `StorageClass` resource.
+Entries with `null` values are dropped.
+The key is used as `metadata.name` of the resulting `StorageClass` resource.
+The value merged over the configuration defined in parameter `storageClassDefaults` to form the `StorageClass` resource.
+Field `provisioner` of each `StorageClass` resource is set to `helmValues.driver.name`, falling back to `nfs.csi.k8s.io` if the Helm value isn't set.
+Values for `provisioner` which are set in parameter `storageClassDefaults` or the value of an entry of this parameter are overwritten.
+
+TIP: The component uses component [`storageclass`], so this component respects globally defined storage class default configurations and the globally defined default storage class.
+
+NOTE: Apart from enforcing that each storage class sets `parameters.server` and `parameters.share`, the component doesn't validate whether the resulting `StorageClass` resources are valid.
+
 == `controller`
 
 [horizontal]

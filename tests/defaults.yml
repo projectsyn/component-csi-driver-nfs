@@ -1,3 +1,28 @@
-# Overwrite parameters here
+parameters:
+  kapitan:
+    dependencies:
+      - type: https
+        source: https://raw.githubusercontent.com/projectsyn/component-storageclass/v1.0.0/lib/storageclass.libsonnet
+        output_path: vendor/lib/storageclass.libsonnet
 
-# parameters: {...}
+  storageclass:
+    defaultClass: nfs
+    defaults: {}
+
+  csi_driver_nfs:
+    storageClassDefaults:
+      reclaimPolicy: Delete
+      volumeBindingMode: WaitForFirstConsumer
+      allowVolumeExpansion: true
+      mountOptions:
+        - nfsvers=4.1
+    storageClasses:
+      nfs1-example-com:
+        parameters:
+          server: nfs1.example.com
+          share: /
+      nfs2-example-net:
+        parameters:
+          server: nfs2.example.net
+          share: /exports/k8s
+      removed: null
