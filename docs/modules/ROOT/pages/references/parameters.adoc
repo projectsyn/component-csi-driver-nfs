@@ -18,6 +18,16 @@ default:: https://github.com/projectsyn/component-csi-driver-nfs/blob/master/cla
 
 The Helm chart for the NFS CSI driver.
 
+== `images`
+
+[horizontal]
+type:: object
+default:: https://github.com/projectsyn/component-csi-driver-nfs/blob/master/class/defaults.yml[See `class/defaults.yml`]
+
+The container image used by the NFS CSI driver.
+
+TIP: Helm value `image.baseRepo` allows overriding the container image registry for all images that aren't defined in this parameter.
+
 == `controller`
 
 [horizontal]

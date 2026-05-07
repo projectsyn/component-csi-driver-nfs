@@ -37,6 +37,10 @@
         "automerge",
         "bump:patch"
       ]
+    },
+    {
+      "matchPackageNames": ["csi-driver-nfs", "registry.k8s.io/sig-storage/nfsplugin"],
+      "groupName": "dependency csi-driver-nfs"
     }
   ]
 }

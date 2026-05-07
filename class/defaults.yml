@@ -9,6 +9,12 @@ parameters:
         source: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
         version: 4.13.2
 
+    images:
+      nfs:
+        registry: registry.k8s.io
+        repository: sig-storage/nfsplugin
+        tag: v4.13.2
+
     controller:
       serviceAccountName: csi-nfs-controller-sa
 
@@ -19,3 +25,7 @@ parameters:
       serviceAccount:
         controller: ${csi_driver_nfs:controller:serviceAccountName}
         node: ${csi_driver_nfs:node:serviceAccountName}
+      image:
+        nfs:
+          repository: ${csi_driver_nfs:images:nfs:registry}/${csi_driver_nfs:images:nfs:repository}
+          tag: ${csi_driver_nfs:images:nfs:tag}
