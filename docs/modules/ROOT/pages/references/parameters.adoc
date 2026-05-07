@@ -18,6 +18,38 @@ default:: https://github.com/projectsyn/component-csi-driver-nfs/blob/master/cla
 
 The Helm chart for the NFS CSI driver.
 
+== `controller`
+
+[horizontal]
+type:: object
+
+Configurations for the NFS CSI controller.
+
+=== `controller.serviceAccountName`
+
+[horizontal]
+type:: string
+default:: `csi-nfs-controller-sa`
+
+The service account name for the NFS CSI controller.
+This parameter is passed to the Helm chart and used by the component to configure a `RoleBinding` to grant the controller access to the `privileged` SCC on OpenShift.
+
+== `node`
+
+[horizontal]
+type:: object
+
+Configurations for the NFS CSI node daemonset.
+
+=== `node.serviceAccountName`
+
+[horizontal]
+type:: string
+default:: `csi-nfs-node-sa`
+
+The service account name for the NFS CSI node daemonset.
+This parameter is passed to the Helm chart and used by the component to configure a `RoleBinding` to grant the node daemonset access to the `privileged` SCC on OpenShift.
+
 == `helmValues`
 
 [horizontal]

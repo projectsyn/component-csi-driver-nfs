@@ -9,4 +9,13 @@ parameters:
         source: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
         version: 4.13.2
 
-    helmValues: {}
+    controller:
+      serviceAccountName: csi-nfs-controller-sa
+
+    node:
+      serviceAccountName: csi-nfs-node-sa
+
+    helmValues:
+      serviceAccount:
+        controller: ${csi_driver_nfs:controller:serviceAccountName}
+        node: ${csi_driver_nfs:node:serviceAccountName}
