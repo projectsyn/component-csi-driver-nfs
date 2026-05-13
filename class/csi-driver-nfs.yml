@@ -1,11 +1,28 @@
 parameters:
   kapitan:
+    dependencies:
+      - type: helm
+        source: ${csi_driver_nfs:charts:csi-driver-nfs:source}
+        chart_name: csi-driver-nfs
+        version: ${csi_driver_nfs:charts:csi-driver-nfs:version}
+        output_path: ${_base_directory}/helmcharts/csi-driver-nfs/v${csi_driver_nfs:charts:csi-driver-nfs:version}
+
     compile:
       - input_paths:
           - ${_base_directory}/component/app.jsonnet
         input_type: jsonnet
         output_path: .
+      - output_path: ${_instance}/10_helmchart
+        input_type: helm
+        output_type: yaml
+        input_paths:
+          - ${_base_directory}/helmcharts/csi-driver-nfs/v${csi_driver_nfs:charts:csi-driver-nfs:version}
+        helm_values: ${csi_driver_nfs:helmValues}
+        helm_params:
+          name: csi-driver-nfs
+          namespace: '${csi_driver_nfs:namespace}'
       - input_paths:
           - ${_base_directory}/component/main.jsonnet
+          - ${_base_directory}/component/storageclasses.jsonnet
         input_type: jsonnet
         output_path: csi-driver-nfs/
