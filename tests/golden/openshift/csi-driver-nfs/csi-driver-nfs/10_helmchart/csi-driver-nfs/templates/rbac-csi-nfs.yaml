@@ -5,8 +5,8 @@ metadata:
     app.kubernetes.io/instance: csi-driver-nfs
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: csi-driver-nfs
-    app.kubernetes.io/version: 4.13.2
-    helm.sh/chart: csi-driver-nfs-4.13.2
+    app.kubernetes.io/version: 4.13.4
+    helm.sh/chart: csi-driver-nfs-4.13.4
   name: csi-nfs-controller-sa
   namespace: syn-csi-driver-nfs
 ---
@@ -17,8 +17,8 @@ metadata:
     app.kubernetes.io/instance: csi-driver-nfs
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: csi-driver-nfs
-    app.kubernetes.io/version: 4.13.2
-    helm.sh/chart: csi-driver-nfs-4.13.2
+    app.kubernetes.io/version: 4.13.4
+    helm.sh/chart: csi-driver-nfs-4.13.4
   name: csi-nfs-node-sa
   namespace: syn-csi-driver-nfs
 ---
@@ -29,8 +29,8 @@ metadata:
     app.kubernetes.io/instance: csi-driver-nfs
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: csi-driver-nfs
-    app.kubernetes.io/version: 4.13.2
-    helm.sh/chart: csi-driver-nfs-4.13.2
+    app.kubernetes.io/version: 4.13.4
+    helm.sh/chart: csi-driver-nfs-4.13.4
   name: nfs-external-provisioner-role
 rules:
   - apiGroups:
@@ -140,8 +140,8 @@ metadata:
     app.kubernetes.io/instance: csi-driver-nfs
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: csi-driver-nfs
-    app.kubernetes.io/version: 4.13.2
-    helm.sh/chart: csi-driver-nfs-4.13.2
+    app.kubernetes.io/version: 4.13.4
+    helm.sh/chart: csi-driver-nfs-4.13.4
   name: nfs-external-resizer-role
 rules:
   - apiGroups:
@@ -198,8 +198,8 @@ metadata:
     app.kubernetes.io/instance: csi-driver-nfs
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: csi-driver-nfs
-    app.kubernetes.io/version: 4.13.2
-    helm.sh/chart: csi-driver-nfs-4.13.2
+    app.kubernetes.io/version: 4.13.4
+    helm.sh/chart: csi-driver-nfs-4.13.4
   name: nfs-csi-resizer-role
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -217,8 +217,8 @@ metadata:
     app.kubernetes.io/instance: csi-driver-nfs
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: csi-driver-nfs
-    app.kubernetes.io/version: 4.13.2
-    helm.sh/chart: csi-driver-nfs-4.13.2
+    app.kubernetes.io/version: 4.13.4
+    helm.sh/chart: csi-driver-nfs-4.13.4
   name: nfs-csi-provisioner-binding
 roleRef:
   apiGroup: rbac.authorization.k8s.io
